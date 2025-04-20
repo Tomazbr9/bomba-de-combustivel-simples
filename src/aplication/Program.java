@@ -1,57 +1,14 @@
 package aplication;
-
-
-class Animal {
-	
-	protected String nome;
-	
-	public Animal() {
-		
-	}
-	
-	public Animal(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public String mostrar() {
-		return "Ola mundo";
-	}
-	
-	
-}
-
-class Cachorro extends Animal {
-	
-	private String atributo;
-	
-	public Cachorro(String nome, String atributo) {
-		super(nome);
-		this.atributo = atributo;
-	}
-
-	public String getAtributo() {
-		return atributo;
-	}
-
-	public void setAtributo(String atributo) {
-		this.atributo = atributo;
-	}
-}
+import models.FuelPump;
+import services.FuelServices;
 
 public class Program {
 
 	public static void main(String[] args) {
-	    Animal c = new Animal("Bruno");
-	    
-	    System.out.println(c.mostrar());
+		FuelPump pump = new FuelPump("Gasolina Comum", 5.99, 5000);
+		FuelServices service = new FuelServices(pump);
+		
+		service.supplyByValue(50.00);
 		
 	}
 }
